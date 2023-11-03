@@ -1,0 +1,21 @@
+{
+  "name": "foodiefleet",
+  "version": "1.0.0",
+  "description": "food ordering website",
+  "main": "index.js",
+  "scripts": {
+    "start":"parcel index.html",
+    "test": "jist"
+  },
+  "author": "kaushal papnai",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^1.12.4",
+    "parcel-bundler": "^1.12.5"
+  },
+  "dependencies": {
+    "core-js": "^3.33.2",
+    "svgo": "^3.0.2",
+    "uuid": "^9.0.1"
+  }
+}
