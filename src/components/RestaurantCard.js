@@ -1,5 +1,5 @@
 import React from "react"
-import "./card.css"
+import "../style/card.css"
 
 const RestaurentCard = ({name,cuisine,rating,image})=>{
     // const  {name,cuisine,rating} = restaurant1.info;

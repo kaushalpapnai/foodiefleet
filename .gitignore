@@ -3,3 +3,4 @@
 /.cache
 /.babelrc
 /dist
+/.parcel-cache
