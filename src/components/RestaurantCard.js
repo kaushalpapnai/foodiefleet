@@ -6,7 +6,7 @@ const RestaurentCard = ({name,cuisines,cloudinaryImageId,locality})=>{
 
     return(
         <>
-         <div id="card-container">
+         <div className="card-container">
             <img src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" + cloudinaryImageId} alt="images"></img>
             <h1>{name}</h1>
             <h2>{cuisines[0]}</h2>

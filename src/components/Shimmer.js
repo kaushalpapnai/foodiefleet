@@ -2,7 +2,13 @@ import React from 'react'
 
 function Shimmer() {
   return (
-    <h1>Loading....</h1>
+    <>
+       <div className='body-container'>
+            {Array(10).fill("").map((e,index)=>(
+                <div key={index}  className='shimmer-card'></div>
+            ))}
+       </div>
+    </>
   )
 }
 

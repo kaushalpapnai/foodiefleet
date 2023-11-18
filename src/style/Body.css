@@ -1,6 +1,6 @@
-#body-container{
+.body-container{
     padding: 50px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    /* justify-content: space-around; */
 }
