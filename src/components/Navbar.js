@@ -17,6 +17,9 @@ const Navbar = ()=>{
                 <Link to="/contact">
                   <li>contact</li>
                 </Link>
+                <Link to="/instamart">
+                  <li>instamart</li>
+                </Link>
                 <li>login</li>
              </ul>
          </div>

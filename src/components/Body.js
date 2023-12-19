@@ -4,14 +4,9 @@
    import {useState} from "react"
    import Shimmer from "./Shimmer.js"
    import { Link } from "react-router-dom"
+   import { filterData } from "../Utils/helper.js"
+   import useOnline from "../Utils/useOnline.js"
 
-
-   const filterData=(restaurants,searchText)=>{
-      const data = restaurants.filter((restaurant)=>
-         restaurant.info.name.toLowerCase()?.includes(searchText.toLowerCase())
-      )
-      return data;
-   }
 
    const Body = ()=>{
 
@@ -28,6 +23,12 @@
          const json = await data.json()
          setFilteredRestaurants(json?.data?.success?.cards[1].card?.card?.gridElements?.infoWithStyle?.restaurants);
          setAllRestaurants(json?.data?.success?.cards[1].card?.card?.gridElements?.infoWithStyle?.restaurants);
+      }
+       
+      const offline = useOnline()
+
+      if(!offline){
+         return <h1> 📍 offline, please check your internet connection</h1>
       }
 
 
