@@ -34,7 +34,8 @@ class Profile extends React.Component{
         console.log("child - render "+ this.props.name)
         return(
             <>
-                <img src={this.state.userInfo.avatar_url} alt="image">
+            <div >
+                <img   src={this.state.userInfo.avatar_url} alt="image">
                 </img>
                 <h1>
                     name: {this.state.userInfo.name}
@@ -45,7 +46,8 @@ class Profile extends React.Component{
                 {/* <h1>count:{count}</h1>
                 <button onClick={()=>{
                     this.setState({count:1})
-                }}>click</button> */}
+                }}>click</button> */}                  
+            </div>
             </>
         )
     }

@@ -1,6 +1,7 @@
 import React from "react"
 import { Outlet } from "react-router-dom"
 import Profile from "./Profile"
+import UserContext from "../Utils/userContext"
 
 class About extends React.Component{
  
@@ -21,6 +22,15 @@ class About extends React.Component{
              {/* <Outlet/> */}
              <Profile name={"First child"}/>
              {/* <Profile name={"second child"}/> */}
+            <UserContext.Consumer>
+               { 
+                  ({user})=>{
+                     return(
+                        <h4>{user.name} - {user.email}</h4>
+                     )
+                  }
+               }
+            </UserContext.Consumer>
 
          </>
       )

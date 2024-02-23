@@ -16,19 +16,29 @@ const CardDetail =()=>{
 
     return (!restaurant)?<Shimmer/>:(
         <>
-          <img src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" + cloudinaryImageId} alt="image"></img>
-          <h1>{name}</h1>
-          <h2>{city}</h2>
-          <ul>
-            {
-              cuisines?.map((obj,index)=>{
-                return (
-                  <li key={index}>{obj}</li>
-                )
-              })
-            }
-          </ul>
-          <h3>{avgRating} stars</h3>
+      <div className="flex justify-center items-center h-[85vh]">
+        <div className="flex bg-gray-200 h-fit items-center rounded-lg">
+          <img className="w-80 h-80 border rounded-lg" src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" + cloudinaryImageId} alt="image"></img>
+          <div className=" mx-8">
+              <h1 className="py-2 bg-white w-52 text-center rounded-lg my-2">title:  {name}</h1>
+              <h2 className="py-2 bg-white w-52 text-center rounded-lg my-2">city:  {city}</h2>
+              <div className="py-2 bg-white w-52 text-center rounded-lg my-2 flex  justify-center">
+                  <h1>menu:- </h1>
+                  <ul>
+                   {
+                     cuisines?.map((obj,index)=>{
+                       return (
+                         <li key={index}>{obj} </li>
+                       )
+                     })
+                   }
+                  </ul>                
+              </div>
+              
+            <h3 className="py-2 bg-white w-52 text-center rounded-lg my-2">starts: {avgRating}</h3>    
+          </div>
+        </div>
+      </div>
         </>
     )
 }

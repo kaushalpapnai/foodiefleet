@@ -1,4 +1,4 @@
-import React, { Children, Suspense, lazy } from "react"
+import React, { Children, Suspense, lazy, useState } from "react"
 import ReactDOM from "react-dom/client"
 import Navbar from "./components/Navbar"
 import Body from "./components/Body"
@@ -9,6 +9,7 @@ import {createBrowserRouter ,RouterProvider,Outlet} from "react-router-dom"
 import CardDetail from "./components/CardDetail"
 import Profile from "./components/Profile"
 import Shimmer from "./components/Shimmer"
+import UserContext from "./Utils/userContext"
 
    // chunking
    // code splitting 
@@ -21,10 +22,22 @@ import Shimmer from "./components/Shimmer"
 
 
 const App = ()=>{
+    const [user , setUser] = useState({
+        name: "kaushal papnai",
+        email: "kaushal@gmail.com"
+    })
+
     return(
         <>
-         <Navbar/>
-         <Outlet/>
+         <UserContext.Provider
+           value={{
+            user: user,
+            setUser: setUser
+           }}
+         >
+           <Navbar/>
+           <Outlet/>
+         </UserContext.Provider>
         </>
     )
 }
