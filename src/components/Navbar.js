@@ -2,9 +2,12 @@ import React from "react"
 import { Link } from "react-router-dom"
 import { useContext } from "react"
 import UserContext from "../Utils/userContext"
+import { useSelector } from 'react-redux';
+
 
 const Navbar = ()=>{
   const {user} = useContext(UserContext)
+  const cartItems = useSelector(store=>store.cart.items)
     return(
         <>
          <div className="flex justify-between bg-orange-500 shadow-lg">
@@ -15,14 +18,16 @@ const Navbar = ()=>{
                 </Link>
                 <Link to="/about">
                   <li className="px-2 text-white hover:text-gray-300 ">about</li>
-                </Link>
+                </Link>             
                 <Link to="/contact">
                   <li className="px-2 text-white hover:text-gray-300 ">contact</li>
                 </Link>
                 <Link to="/instamart">
                   <li className="px-3 text-white hover:text-gray-300 ">instamart</li>
                 </Link>
-                <li className="pr-2 text-white">login</li>
+                <Link to="/cart">
+                  <li className="px-3 text-white hover:text-gray-300 ">cart - {cartItems.length}</li>
+                </Link>
                 <li className="pr-2 text-white">{user.name}</li>
              </ul>
          </div>

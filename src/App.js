@@ -10,6 +10,9 @@ import CardDetail from "./components/CardDetail"
 import Profile from "./components/Profile"
 import Shimmer from "./components/Shimmer"
 import UserContext from "./Utils/userContext"
+import { Provider } from "react-redux"
+import store from "./Utils/store"
+import Cart from "./components/Cart"
 
    // chunking
    // code splitting 
@@ -29,6 +32,7 @@ const App = ()=>{
 
     return(
         <>
+        <Provider store={store}>
          <UserContext.Provider
            value={{
             user: user,
@@ -38,6 +42,7 @@ const App = ()=>{
            <Navbar/>
            <Outlet/>
          </UserContext.Provider>
+        </Provider>
         </>
     )
 }
@@ -76,6 +81,10 @@ const router = createBrowserRouter([
                 element:(<Suspense fallback={<Shimmer/>}>
                           <Instamart/>
                         </Suspense>)
+            },
+            {
+                path:"/cart",
+                element:<Cart/>,
             }
         ]
     },
