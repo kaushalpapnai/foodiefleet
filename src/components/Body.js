@@ -68,6 +68,7 @@
                >
                </input>
                <button
+                  data-testid="search-btn"
                   className=" rounded-r-lg border-amber-600 p-2 bg-amber-600 text-white hover:bg-amber-700"
                   onClick={()=>{
                   const data = filterData(allRestaurants,searchText)
@@ -76,7 +77,7 @@
             
                >Click</button>
             </div>
-            <div className="flex flex-wrap justify-center">
+            <div className="flex flex-wrap justify-center" data-testid="res-list">
                {filteredRestaurants.length === 0 ? (<h1>restaurant not found</h1>) :
                filteredRestaurants.map((obj) =>{
                   return(

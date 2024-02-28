@@ -15,7 +15,7 @@ function Cart() {
 
   return (
     <>
-      <h1 className='font-bold text-3xl' >Cart Items - {cartItems.length}</h1>
+      <h1 className='font-bold text-3xl'>Cart Items - {cartItems.length}</h1>
       <button className=' bg-green-300 p-2 m-5 border' onClick={()=>handleClick()}>
           clear cart
       </button>
